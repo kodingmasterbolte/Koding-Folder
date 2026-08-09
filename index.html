@@ -1,164 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Complete Coding & Placement Resource Folder — coding notes, DSA, roadmaps, projects and interview preparation in one organized folder.">
-  <title>Complete Coding & Placement Resource Folder</title>
-  <style>
-    :root{--bg:#f7f9fc;--card:#fff;--text:#111827;--muted:#64748b;--line:#e5e7eb;--accent:#2563eb;--accent2:#1d4ed8;--dark:#0b1220;--green:#16a34a}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
-    a{text-decoration:none;color:inherit}.container{width:min(1100px,92%);margin:auto}
-    .topbar{background:var(--dark);color:#fff;text-align:center;font-size:13px;padding:9px 12px}
-    nav{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}.navin{height:64px;display:flex;align-items:center;justify-content:space-between}.logo{font-weight:800;letter-spacing:-.4px}.navcta{background:var(--accent);color:#fff;padding:11px 17px;border-radius:10px;font-weight:750;font-size:14px}
-    .hero{padding:72px 0 58px;background:linear-gradient(180deg,#fff 0%,#f7f9fc 100%)}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
-    .eyebrow{display:inline-flex;align-items:center;gap:7px;background:#eff6ff;color:#1d4ed8;border:1px solid #dbeafe;padding:7px 11px;border-radius:999px;font-size:12px;font-weight:800;margin-bottom:18px}
-    h1{font-size:clamp(38px,5vw,62px);line-height:1.03;letter-spacing:-2.7px;margin:0 0 18px}h2{font-size:clamp(28px,4vw,42px);line-height:1.1;letter-spacing:-1.5px;margin:0 0 12px}h3{margin:0 0 7px}.lead{font-size:18px;color:var(--muted);max-width:650px}.hero-actions{display:flex;gap:12px;align-items:center;margin:26px 0 17px;flex-wrap:wrap}.primary{background:var(--accent);color:#fff;border:0;padding:16px 24px;border-radius:12px;font-size:16px;font-weight:850;cursor:pointer;box-shadow:0 8px 25px #2563eb30}.secondary{background:#fff;border:1px solid var(--line);padding:15px 20px;border-radius:12px;font-weight:750}.micro{font-size:12px;color:var(--muted)}
-    .folder{background:#0f172a;border-radius:22px;padding:20px;box-shadow:0 24px 70px #0f172a28;transform:rotate(1deg)}.folder-top{display:flex;gap:8px;margin-bottom:18px}.dot{width:9px;height:9px;border-radius:50%;background:#94a3b8}.filegrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.file{background:#172033;border:1px solid #263248;padding:15px;border-radius:12px;color:#e5e7eb}.file small{display:block;color:#94a3b8;margin-top:5px}
-    .trust{padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}.trustrow{display:flex;justify-content:center;gap:35px;flex-wrap:wrap;color:#475569;font-size:13px;font-weight:750}.trustrow span{display:flex;align-items:center;gap:7px}
-    section{padding:78px 0}.center{text-align:center}.sectionlead{color:var(--muted);max-width:650px;margin:0 auto 34px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:23px}.icon{font-size:24px;margin-bottom:12px}.card p{margin:0;color:var(--muted);font-size:14px}
-    .dark{background:var(--dark);color:#fff}.dark .sectionlead{color:#aab5c7}.dark .card{background:#121b2c;border-color:#253148}.dark .card p{color:#aab5c7}
-    .folder-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:850px;margin:30px auto 0}.row{background:#fff;color:var(--text);padding:16px 18px;border-radius:13px;border:1px solid var(--line);display:flex;justify-content:space-between;gap:12px}.row b{font-size:14px}.row span{color:var(--muted);font-size:13px;text-align:right}
-    .offer{background:linear-gradient(135deg,#eff6ff,#fff);border:1px solid #bfdbfe;border-radius:24px;padding:34px;display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center}.price{font-size:45px;font-weight:900;letter-spacing:-2px}.old{text-decoration:line-through;color:#94a3b8;font-size:18px;margin-left:8px}.offer ul{padding-left:20px;color:#475569}.offer li{margin:7px 0}
-    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.review{background:#fff;border:1px solid var(--line);border-radius:17px;padding:22px}.stars{letter-spacing:2px;margin-bottom:10px}.review p{margin:0 0 14px;color:#334155}.review small{color:#64748b;font-weight:700}
-    details{background:#fff;border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:10px auto;max-width:800px}summary{cursor:pointer;font-weight:800}details p{color:var(--muted);margin:12px 0 0}
-    .final{background:linear-gradient(135deg,#0b1220,#172554);color:#fff;text-align:center;padding:78px 0}.final p{color:#cbd5e1;max-width:600px;margin:12px auto 25px}.footer{padding:28px 0;color:#64748b;font-size:12px;text-align:center}
-    .sticky{display:none;position:fixed;bottom:12px;left:12px;right:12px;z-index:30}.sticky a{display:block;text-align:center;background:var(--accent);color:#fff;padding:15px;border-radius:13px;font-weight:900;box-shadow:0 10px 30px #0003}
-    @media(max-width:800px){.hero{padding-top:48px}.hero-grid{grid-template-columns:1fr;gap:35px}.grid,.reviews{grid-template-columns:1fr}.folder-list{grid-template-columns:1fr}.offer{grid-template-columns:1fr}.offer .primary{width:100%}.navin{height:58px}.navcta{padding:9px 12px}.hero-actions{width:100%}.hero-actions .primary{width:100%}.secondary{width:100%;text-align:center}.sticky{display:block}section{padding:60px 0}.trustrow{gap:16px;justify-content:flex-start}.trustrow span{width:calc(50% - 10px)}h1{letter-spacing:-2px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complete Coding & Placement Resource Folder</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#f7f9fc;color:#111827}
+.container{max-width:1050px;margin:auto;padding:24px}
+.hero{padding:70px 24px;text-align:center;background:white}
+h1{font-size:clamp(38px,7vw,68px);line-height:1.03;margin:10px 0 18px}
+p{color:#64748b;font-size:18px;line-height:1.6}
+.btn{display:inline-block;background:#2563eb;color:white;padding:16px 24px;border-radius:12px;text-decoration:none;font-weight:800;margin:10px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:white;border:1px solid #e5e7eb;border-radius:16px;padding:24px}
+.price{font-size:48px;font-weight:900}
+@media(max-width:700px){.cards{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-  <div class="topbar">⚡ Instant digital access • One-time payment • Built for coding & placement preparation</div>
-  <nav><div class="container navin"><div class="logo">CODE<span style="color:#2563eb">FOLDER</span></div><a class="navcta" href="#offer">Get Access — ₹99</a></div></nav>
+<section class="hero">
+<div class="container">
+<p>💻 CODING • CS • PLACEMENT STUDENTS</p>
+<h1>Everything You Need for Coding & Placements. One Folder.</h1>
+<p>Stop searching through random PDFs, bookmarks and videos. Get an organized digital resource library for coding, CS subjects, projects and placement preparation.</p>
+<a class="btn" href="https://cosmofeed.com/vp/6a7623819c1dba0013394f42" target="_blank" rel="noopener">GET INSTANT ACCESS — ₹99</a>
+</div>
+</section>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">FOR CODING • CS • PLACEMENT STUDENTS</div>
-          <h1>Everything You Need for Coding & Placements. One Folder.</h1>
-          <p class="lead">Stop hunting through random PDFs, bookmarks and videos. Get an organized digital resource library for learning, revision, projects and interview preparation.</p>
-          <div class="hero-actions">
-            <a class="primary" href="#offer">GET INSTANT ACCESS — ₹99</a>
-            <a class="secondary" href="#inside">See What's Inside</a>
-          </div>
-          <div class="micro">🔒 Secure checkout • 📥 Instant access • 💻 Digital product</div>
-        </div>
-        <div class="folder" aria-label="Digital folder preview">
-          <div class="folder-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
-          <div style="color:#fff;font-weight:850;font-size:18px;margin-bottom:15px">📁 Complete Coding & Placement</div>
-          <div class="filegrid">
-            <div class="file">📘 Coding Notes<small>Subject-wise resources</small></div>
-            <div class="file">🧠 DSA<small>Patterns & practice</small></div>
-            <div class="file">🗺️ Roadmaps<small>Structured learning</small></div>
-            <div class="file">💼 Placement<small>Interview preparation</small></div>
-            <div class="file">🚀 Projects<small>Build your portfolio</small></div>
-            <div class="file">📄 Resume<small>Career resources</small></div>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="container">
+<h2>What's Inside?</h2>
+<div class="cards">
+<div class="card"><h3>💻 Coding Notes</h3><p>Programming and computer science resources organized by topic.</p></div>
+<div class="card"><h3>🧠 DSA Resources</h3><p>Concepts, patterns and practice resources for problem solving.</p></div>
+<div class="card"><h3>🗺️ Coding Roadmaps</h3><p>Clear paths to help you decide what to learn next.</p></div>
+<div class="card"><h3>🚀 Project Resources</h3><p>Project ideas and resources to turn learning into practical work.</p></div>
+<div class="card"><h3>💼 Placement Prep</h3><p>Technical and career resources for internship and placement preparation.</p></div>
+<div class="card"><h3>📄 Career Resources</h3><p>Resume, portfolio, GitHub and interview-oriented resources.</p></div>
+</div>
+</section>
 
-    <div class="trust"><div class="container trustrow"><span>✓ Instant Access</span><span>✓ One-Time Payment</span><span>✓ Organized Resources</span><span>✓ Mobile Friendly</span></div></div>
+<section class="hero">
+<div class="container">
+<h2>Complete Coding & Placement Folder</h2>
+<div class="price">₹99</div>
+<p>One-time payment • Digital product • Instant access</p>
+<a class="btn" href="https://cosmofeed.com/vp/6a7623819c1dba0013394f42" target="_blank" rel="noopener">GET INSTANT ACCESS</a>
+</div>
+</section>
 
-    <section id="inside">
-      <div class="container">
-        <div class="center"><h2>What's Inside?</h2><p class="sectionlead">A single organized folder designed to reduce the time you spend searching and increase the time you spend learning.</p></div>
-        <div class="grid">
-          <div class="card"><div class="icon">💻</div><h3>Coding Notes</h3><p>Core programming and computer science resources organized by topic.</p></div>
-          <div class="card"><div class="icon">🧠</div><h3>DSA Resources</h3><p>Concepts, patterns and practice resources for stronger problem solving.</p></div>
-          <div class="card"><div class="icon">🗺️</div><h3>Coding Roadmaps</h3><p>Clear paths that help you decide what to learn next.</p></div>
-          <div class="card"><div class="icon">🚀</div><h3>Project Resources</h3><p>Project ideas and resources to turn learning into practical work.</p></div>
-          <div class="card"><div class="icon">💼</div><h3>Placement Prep</h3><p>Technical and career resources for internship and placement preparation.</p></div>
-          <div class="card"><div class="icon">📄</div><h3>Career Resources</h3><p>Resume, portfolio, GitHub and interview-oriented resources.</p></div>
-        </div>
-      </div>
-    </section>
+<section class="container">
+<h2>Frequently Asked Questions</h2>
+<div class="card"><h3>What do I receive?</h3><p>You receive access to the digital resource folder after payment.</p></div>
+<div class="card"><h3>Is this a physical product?</h3><p>No. It is a digital product.</p></div>
+<div class="card"><h3>Is this a coding course?</h3><p>No. It is a resource folder/library, not a live or video course.</p></div>
+</section>
 
-    <section class="dark">
-      <div class="container">
-        <div class="center"><h2>One Folder. Less Searching.</h2><p class="sectionlead">Instead of collecting resources from dozens of places, keep the important ones together.</p></div>
-        <div class="folder-list">
-          <div class="row"><b>Programming Fundamentals</b><span>Core concepts & notes</span></div>
-          <div class="row"><b>Data Structures & Algorithms</b><span>DSA learning resources</span></div>
-          <div class="row"><b>DBMS & SQL</b><span>Study + interview prep</span></div>
-          <div class="row"><b>Operating Systems</b><span>Revision resources</span></div>
-          <div class="row"><b>Computer Networks</b><span>Core CS concepts</span></div>
-          <div class="row"><b>Projects & Portfolio</b><span>Build & showcase work</span></div>
-          <div class="row"><b>Technical Interviews</b><span>Interview preparation</span></div>
-          <div class="row"><b>Resume & Career</b><span>Career-focused resources</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="center"><h2>Built for Students Who Want Structure</h2><p class="sectionlead">Whether you're starting coding, revising CS subjects or preparing for placements, the folder gives you a central resource hub.</p></div>
-        <div class="grid">
-          <div class="card"><h3>👨‍💻 Beginners</h3><p>Get a clearer starting point instead of jumping between random tutorials.</p></div>
-          <div class="card"><h3>🎓 College Students</h3><p>Keep study and coding resources organized throughout your degree.</p></div>
-          <div class="card"><h3>💼 Placement Aspirants</h3><p>Prepare technical and career topics from one convenient resource hub.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="offer">
-      <div class="container">
-        <div class="offer">
-          <div>
-            <div class="eyebrow">LIMITED-TIME LAUNCH PRICE</div>
-            <h2>Complete Coding & Placement Folder</h2>
-            <p style="color:#64748b">One organized digital library for coding, CS subjects, projects and placement preparation.</p>
-            <ul>
-              <li>Instant digital access</li>
-              <li>Organized resources</li>
-              <li>One-time payment</li>
-              <li>Access from phone or laptop</li>
-            </ul>
-          </div>
-          <div style="text-align:center">
-            <div class="price">₹99 <span class="old">₹499</span></div>
-            <p class="micro">Digital product • Instant access</p>
-            <!-- Replace the URL below with your actual Cosmofeed checkout URL -->
-            <a class="primary" href="YOUR_COSMOFEED_CHECKOUT_URL" target="_blank" rel="noopener">GET INSTANT ACCESS</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="center"><h2>What Students Say</h2><p class="sectionlead">Replace these placeholders with genuine customer feedback as you collect it.</p></div>
-        <div class="reviews">
-          <div class="review"><div class="stars">★★★★★</div><p>“The biggest benefit for me was having everything organized instead of searching for resources every time I studied.”</p><small>— Student, CSE</small></div>
-          <div class="review"><div class="stars">★★★★★</div><p>“For ₹99, the convenience alone is worth it. I finally have one place to start when I need a resource.”</p><small>— Engineering Student</small></div>
-          <div class="review"><div class="stars">★★★★★</div><p>“The placement and coding sections made my preparation much easier to organize.”</p><small>— Placement Aspirant</small></div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="center"><h2>Frequently Asked Questions</h2></div>
-        <details><summary>What do I receive after payment?</summary><p>You receive access to the digital resource folder through the delivery method stated at checkout.</p></details>
-        <details><summary>Is this a physical product?</summary><p>No. This is a digital product. Nothing will be shipped to you.</p></details>
-        <details><summary>Can I access it on my phone?</summary><p>Yes. The resources are intended to be accessible from a phone, tablet or laptop.</p></details>
-        <details><summary>Is this a coding course?</summary><p>No. It is a resource folder/library, not a live or video course.</p></details>
-        <details><summary>Will I get a job or placement guarantee?</summary><p>No. The folder provides learning and preparation resources; outcomes depend on your skills, preparation and individual circumstances.</p></details>
-      </div>
-    </section>
-
-    <section class="final">
-      <div class="container">
-        <h2>Stop Searching. Start Learning.</h2>
-        <p>Get the complete coding and placement resource folder and keep your essential study resources organized in one place.</p>
-        <a class="primary" href="YOUR_COSMOFEED_CHECKOUT_URL" target="_blank" rel="noopener">GET INSTANT ACCESS — ₹99</a>
-        <div class="micro" style="color:#94a3b8;margin-top:12px">Secure checkout • Digital delivery</div>
-      </div>
-    </section>
-  </main>
-
-  <div class="sticky"><a href="YOUR_COSMOFEED_CHECKOUT_URL" target="_blank" rel="noopener">GET INSTANT ACCESS — ₹99</a></div>
-  <footer class="footer">© 2026 • Coding Resource Library • Digital product</footer>
+<section class="hero">
+<div class="container">
+<h2>Stop Searching. Start Learning.</h2>
+<p>Keep your essential coding and placement resources organized in one place.</p>
+<a class="btn" href="https://cosmofeed.com/vp/6a7623819c1dba0013394f42" target="_blank" rel="noopener">GET INSTANT ACCESS — ₹99</a>
+</div>
+</section>
 </body>
 </html>
